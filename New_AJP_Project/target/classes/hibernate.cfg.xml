@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-configuration>
+    <session-factory>
+        <!-- JDBC Database connection settings -->
+        <property name="hibernate.dialect">org.hibernate.dialect.Oracle12cDialect</property>
+        <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
+        <property name="hibernate.connection.username">System</property>
+        <property name="hibernate.connection.password">12345</property>
+
+        <!-- JDBC connection pool settings -->
+        <property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.max_size">20</property>
+
+        <!-- Specify dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.Oracle12cDialect</property>
+
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Mention annotated class -->
+        <mapping class="com.MedicalStore.entities.Admin"/>
+        <mapping class="com.MedicalStore.entities.Customer"/>
+        <mapping class="com.MedicalStore.entities.Staff"/>
+        <mapping class="com.MedicalStore.entities.Sales"/>
+        <mapping class="com.MedicalStore.entities.SalesItem"/>
+        <mapping class="com.MedicalStore.entities.Product"/>
+        <mapping class="com.MedicalStore.entities.Bill"/>
+         <mapping class="com.MedicalStore.dao.SalesDAO"/>
+        <mapping class="com.MedicalStore.Service.SalesService"/>
+         <mapping class="com.MedicalStore.entities.Sales"/>
+     
+    </session-factory>
+</hibernate-configuration>
